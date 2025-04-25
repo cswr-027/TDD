@@ -11,4 +11,5 @@
 package com.example.project;
 
 public class Wardrobe {
+	public int elementCombos = 1;
 }

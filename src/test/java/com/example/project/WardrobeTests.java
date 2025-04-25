@@ -19,4 +19,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 class WardrobeTests {
+
+	@Test
+	void exactFitsWall() {
+		Wardrobe w = new Wardrobe();
+		assertEquals(250, w.elementCombos);
+	}
 }
