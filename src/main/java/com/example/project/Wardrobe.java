@@ -10,10 +10,14 @@
 
 package com.example.project;
 
-public class Calculator {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-	public int add(int a, int b) {
-		return a + b;
+public class Wardrobe {
+	public ArrayList<Integer> elementCombos = new ArrayList<>(Arrays.asList(250));
+
+	public ArrayList<Integer> getCombos() {
+		return elementCombos;
 	}
-
 }

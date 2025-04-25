@@ -11,31 +11,29 @@
 package com.example.project;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-class CalculatorTests {
-
+class WardrobeTests {
 	@Test
-	@DisplayName("1 + 1 = 2")
-	void addsTwoNumbers() {
-		Calculator calculator = new Calculator();
-		assertEquals(2, calculator.add(1, 1), "1 + 1 should equal 2");
+	void returnTypeIsArray() {
+		Wardrobe w = new Wardrobe();
+		assertTrue(w.getCombos() instanceof ArrayList);
 	}
 
-	@ParameterizedTest(name = "{0} + {1} = {2}")
-	@CsvSource({
-			"0,    1,   1",
-			"1,    2,   3",
-			"49,  51, 100",
-			"1,  100, 101"
-	})
-	void add(int first, int second, int expectedResult) {
-		Calculator calculator = new Calculator();
-		assertEquals(expectedResult, calculator.add(first, second),
-				() -> first + " + " + second + " should equal " + expectedResult);
+	@Test
+	void exactFitsWall() {
+		Wardrobe w = new Wardrobe();
+		for (int i : w.elementCombos) {
+			assertEquals(250, i);
+		}
 	}
 }
