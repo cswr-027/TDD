@@ -16,5 +16,4 @@ import java.util.List;
 
 public class Wardrobe {
 	public ArrayList<Integer> elementCombos = new ArrayList<>(Arrays.asList(250));
-	// public int elementCombos = 250;
 }
