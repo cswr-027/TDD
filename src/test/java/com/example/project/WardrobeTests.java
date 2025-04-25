@@ -23,6 +23,8 @@ class WardrobeTests {
 	@Test
 	void exactFitsWall() {
 		Wardrobe w = new Wardrobe();
-		assertEquals(250, w.elementCombos);
+		for (int i : w.elementCombos) {
+			assertEquals(250, i);
+		}
 	}
 }
