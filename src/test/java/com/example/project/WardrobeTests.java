@@ -12,6 +12,9 @@ package com.example.project;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.beans.Transient;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -23,17 +26,43 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 class WardrobeTests {
+	Wardrobe w;
+
+	@BeforeEach
+	void setUp() {
+		w = new Wardrobe();
+	}
+
+	@Test
+	void correctElementSizes() {
+		ArrayList<Integer> correctList = new ArrayList<>(Arrays.asList(50, 75, 100, 120));
+		assertEquals(correctList, w.elementSizes);
+	}
+
+	@Test
+	void correctComboAmount() {
+		assertEquals(3, w.elementCombos.size());
+	}
+
 	@Test
 	void returnTypeIsArray() {
-		Wardrobe w = new Wardrobe();
 		assertTrue(w.getCombos() instanceof ArrayList);
 	}
 
 	@Test
 	void exactFitsWall() {
-		Wardrobe w = new Wardrobe();
 		for (int i : w.elementCombos) {
 			assertEquals(250, i);
 		}
+	}
+
+	@Test
+	void addingMinusOneIsAnError() {
+		assertThrows(Wardrobe.InvalidComboException.class,
+		() -> {
+			w.addCombo(-1);
+		},
+		"Wardrobe.InvalidComboException was expected"
+		);
 	}
 }
