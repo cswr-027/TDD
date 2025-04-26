@@ -34,6 +34,12 @@ class WardrobeTests {
 	}
 
 	@Test
+	void correctElementSizes() {
+		ArrayList<Integer> correctList = new ArrayList<>(Arrays.asList(50, 75, 100, 120));
+		assertEquals(correctList, w.elementSizes);
+	}
+
+	@Test
 	void returnTypeIsArray() {
 		assertTrue(w.getCombos() instanceof ArrayList);
 	}
