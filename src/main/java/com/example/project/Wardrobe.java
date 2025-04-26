@@ -15,10 +15,22 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Wardrobe {
+	public static class InvalidComboException extends RuntimeException {
+        public InvalidComboException(String message) {
+            super(message);
+        }
+    }
+
 	public ArrayList<Integer> elementCombos = new ArrayList<>(Arrays.asList(250));
 
 	public ArrayList<Integer> getCombos() {
 		return elementCombos;
 	}
-	
+
+	public void addCombo(int num) {
+		if (num != 250) {
+			throw new InvalidComboException("Combo must be 250");
+		}
+		elementCombos.add(num);
+	}
 }
