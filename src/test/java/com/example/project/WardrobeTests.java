@@ -12,6 +12,9 @@ package com.example.project;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.beans.Transient;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -40,5 +43,15 @@ class WardrobeTests {
 		for (int i : w.elementCombos) {
 			assertEquals(250, i);
 		}
+	}
+
+	@Test
+	void addingMinusOneIsAnError() {
+		assertThrows(Wardrobe.InvalidComboException.class,
+		() -> {
+			w.addCombo(-1);
+		},
+		"Wardrobe.InvalidComboException was expected"
+		);
 	}
 }

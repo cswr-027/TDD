@@ -20,4 +20,5 @@ public class Wardrobe {
 	public ArrayList<Integer> getCombos() {
 		return elementCombos;
 	}
+	
 }
