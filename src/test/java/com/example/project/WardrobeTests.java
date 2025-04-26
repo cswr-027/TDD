@@ -23,15 +23,20 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 class WardrobeTests {
+	Wardrobe w;
+
+	@BeforeEach
+	void setUp() {
+		w = new Wardrobe();
+	}
+
 	@Test
 	void returnTypeIsArray() {
-		Wardrobe w = new Wardrobe();
 		assertTrue(w.getCombos() instanceof ArrayList);
 	}
 
 	@Test
 	void exactFitsWall() {
-		Wardrobe w = new Wardrobe();
 		for (int i : w.elementCombos) {
 			assertEquals(250, i);
 		}
