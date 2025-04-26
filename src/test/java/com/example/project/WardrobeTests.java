@@ -40,6 +40,11 @@ class WardrobeTests {
 	}
 
 	@Test
+	void correctComboAmount() {
+		assertEquals(3, w.elementCombos.size())
+	}
+
+	@Test
 	void returnTypeIsArray() {
 		assertTrue(w.getCombos() instanceof ArrayList);
 	}
