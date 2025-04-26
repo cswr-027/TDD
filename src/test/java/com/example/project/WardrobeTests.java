@@ -41,7 +41,7 @@ class WardrobeTests {
 
 	@Test
 	void correctComboAmount() {
-		assertEquals(3, w.elementCombos.size())
+		assertEquals(3, w.elementCombos.size());
 	}
 
 	@Test

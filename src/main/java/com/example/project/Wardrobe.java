@@ -21,7 +21,7 @@ public class Wardrobe {
         }
     }
 
-	public ArrayList<Integer> elementCombos = new ArrayList<>(Arrays.asList(250));
+	public ArrayList<Integer> elementCombos = new ArrayList<>(Arrays.asList(250, 250, 250));
 	public ArrayList<Integer> elementSizes = new ArrayList<>(Arrays.asList(50, 75, 100, 120));
 
 	public ArrayList<Integer> getCombos() {
